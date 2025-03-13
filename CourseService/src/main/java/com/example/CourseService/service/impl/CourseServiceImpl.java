@@ -45,15 +45,20 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Optional<Course> getCourseById(Long id) {
-        Optional<Course> course=courseRepository.findById(id);
-        if(course.isPresent()){
-            return course;
-        }else {
-            throw new RuntimeException("There is no course belongs to this id!");
-        }
+    public CourseDto getCourseById(Long id) {
+        Course course = courseRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("There is no course belongs to this id!"));
 
+        // Convert Course entity to CourseDto
+        CourseDto courseDto = new CourseDto();
+        courseDto.setCourseId(courseDto.getInstructorId());
+        courseDto.setTitle(course.getTitle());
+        courseDto.setInstructorId(course.getInstructorId());
+        courseDto.setDescription(course.getDescription());
+        courseDto.setContentURL(courseDto.getContentURL());
+        return courseDto;
     }
+
 
     @Override
     public void deleteCourse(Long id, Long userId) {
