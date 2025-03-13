@@ -34,14 +34,9 @@ public class CourseController {
         return courseServiceImpl.getAllCourse();
     }
 
-    @GetMapping("/getCourseById/{id}")
-    public ResponseEntity <?> getCourseById(@PathVariable Long id){
-        try {
-            Optional<Course> course = courseServiceImpl.getCourseById(id);
-            return ResponseEntity.ok(course);
-        }catch(RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
-        }
+    @GetMapping("/{id}")
+    public CourseDto getCourseById(@PathVariable Long id){
+        return courseServiceImpl.getCourseById(id);
     }
 
     @DeleteMapping("/deleteCourse/{courseId}")
