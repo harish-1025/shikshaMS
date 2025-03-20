@@ -59,6 +59,7 @@ public class CourseServiceImpl implements CourseService {
         return courseDto;
     }
 
+
     @Override
     public void deleteCourse(Long id, Long userId) {
         UserDto user=userFeignClient.getUserById(userId);
