@@ -10,13 +10,16 @@
         <module name="Api-gateway" />
         <module name="ServiceRegistry" />
       </profile>
-      <profile name="Annotation profile for CourseService" enabled="true">
+      <profile name="Annotation profile for SubmissionService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
+        <module name="SubmissionService" />
+        <module name="AssessmentService" />
+        <module name="EnrollmentService" />
         <module name="UserService" />
         <module name="CourseService" />
       </profile>
@@ -25,8 +28,11 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Api-gateway" options="-parameters" />
+      <module name="AssessmentService" options="-parameters" />
       <module name="CourseService" options="-parameters" />
+      <module name="EnrollmentService" options="-parameters" />
       <module name="ServiceRegistry" options="-parameters" />
+      <module name="SubmissionService" options="-parameters" />
       <module name="UserService" options="-parameters" />
     </option>
   </component>

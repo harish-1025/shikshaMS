@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface CourseService {
     CourseDto createCourse(Course course,Long userId);
     List<CourseDto> getAllCourse();
-    Optional<Course> getCourseById(Long id);
+    CourseDto getCourseById(Long id);
     void deleteCourse(Long id,Long userId);
 
 }
