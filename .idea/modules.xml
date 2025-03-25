@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CourseService/CourseService.iml" filepath="$PROJECT_DIR$/CourseService/CourseService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Shiksha.iml" filepath="$PROJECT_DIR$/.idea/Shiksha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserService/UserService.iml" filepath="$PROJECT_DIR$/UserService/UserService.iml" />
     </modules>
   </component>
 </project>
